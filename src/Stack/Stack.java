@@ -55,6 +55,17 @@ public class Stack<T> {
 		return null;
 	}
 	
+	void displayAllElements() {
+		if(!isEmpty()) {
+			Node n = top;
+			while(n != null) {
+				System.out.println(n.data);
+				n = n.next;
+			}
+		}else
+			System.out.println("Stack is Empty");
+	}
+	
 	
 	
 	public static void main(String[] args) {
@@ -64,23 +75,28 @@ public class Stack<T> {
 		s.push(5);
 		s.peek();
 		s.push(6);
+		s.displayAllElements();
 		s.peek();
 		s.pop();
 		s.pop();
 		s.pop();
 		s.peek();
+		s.displayAllElements();
 		
 		/*
 		 * Stack is Empty
 			Inserting data = 5
 			Element on top of the stack = 5
 			Inserting data = 6
+			6
+			5
+			Stack is Empty
 			Element on top of the stack = 6
 			Popping data = 6
 			Popping data = 5
 			Stack is Empty
 			Stack is Empty
-
+			Stack is Empty
 		 */
 	}
 
